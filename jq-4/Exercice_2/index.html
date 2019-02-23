@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="jquery-3.3.1.min.js"></script>
+  <title>Exercice 2</title>
+</head>
+<body>
+  <div>
+    <p>Demander à l'aide d'un formulaire les 5 dernières notes d'un élève.</p>
+  </div>
+  <h1>Bulletin de notes</h1>
+<form>
+  <label for="note">note</label>
+  <input type="text" id= "note" class="champ">
+  <input type="button" id="envoyer" value="Envoyer">
+</form>
+<p id="display"></p>
+<script>
+  $(function(){
+    var notes = [];// le tableau ici pour ne pas écrasé le tout
+    $('#envoyer').click(function(){
+      notes.push($('#note').val());//push permet de mettre des valeur dans le tableau
+      //console.log(notes); //pour débeuguer le code
+      //5 valeur peut étre mis dans le tableau
+      if(notes.length==5){
+
+        //le prop permet de block le bouton à 5 notes rentré dans le formulaire (permet de modifier un attribut)
+        $('#envoyer').prop('disabled',true);
+        $('#display').html('votre moyenne est ' + average(notes));
+      }
+    });
+    //function average permet de calculé la moyenne des éléments d'un tableau qu'on lui passe en parametre (un plus qui n'étais pas demandé sur l'exo)
+    function average(notes){
+      var somme = 0;
+      for (var i = 0; i < notes.length; i++){
+        somme += parseInt(notes[i]);
+      }
+      return somme/notes.length;//somme divisé par la taille du tableau
+    }
+  })
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

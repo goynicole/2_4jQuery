@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="jquery-3.3.1.min.js"></script>
+  <title>Exercice 1</title>
+</head>
+<body>
+  <div>
+    <p> Clique sur le bouton pour voir ton nombre de click.</p>
+  </div>
+  <form>
+    <button id="update" type="button">Cliquez ici !</button>
+     <div id="counter"></div>
+  </form>
+<script>
+$(function() {
+  // compteDeClick commence à zéro
+var compteDeClick = 0;
+  $("#update").click(function() {
+    compteDeClick++;
+    // html définit ou retourne le contenu des éléments selectionnés
+    $("#counter").html("Vous en êtes à "+ compteDeClick + " clic(s)");
+  });
+});
+</script>
+</body>
+</html>

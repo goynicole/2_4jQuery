@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.3.1.min.js"></script>
+    <title>Exercice 2</title>
+  </head>
+  <body>
+    <div class="container">
+     <div class="row">
+       <header>
+         <h1>Exercices Jquery</h1>
+       </header>
+     </div>
+     <div class="row">
+       <div class="col">
+         <h2>Exercice 2</h2>
+         <p>Construisez une page html avec un bouton "+", un bouton "-" et un champ texte dans lequel on augmente ou baisse le chiffre en fonction des boutons cliqués.</p>
+         <button type="button" name="button" id="ajouter" class="btn btn-primary btn-block">+</button>
+         <input type="text" name="nom" value="0" id="nombreClick" class="form-control"/>
+         <button type="button" name="button" id="retirer" class="btn btn-primary btn-block">-</button>
+       </div>
+     </div>
+   </div>
+  <script>
+  $(function(){
+      $('#ajouter').click(function(){
+        //La méthode .val() récupère ou remplace la value d'un élément de formulaire
+        //Nous récupérons donc la valeur de l'input portant l'id #nombreClick dans l'objet valeur
+        var valeur = $('#nombreClick').val();
+        //on incrémente d'une unité l'objet valeur à chaque clic
+        valeur++;
+          //on récupère la value de "valeur" que l'on affiche dans l'input
+        $('#nombreClick').val(valeur);
+      });
+
+      $('#retirer').click(function(){
+        var valeur = $('#nombreClick').val();
+        // on décremente d'une unité à chaque clic
+        valeur--;
+        $('#nombreClick').val(valeur);
+      });
+    });
+
+  </script>
+  </body>
+</html>
