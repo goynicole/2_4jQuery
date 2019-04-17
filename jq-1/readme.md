@@ -1,4 +1,5 @@
 # Exercices JQuery 1
+
 **IMPORTANT**
 
 Les fichiers *HTML* et *jQuery* sont fournis. **Attention** : Comme pour Bootstrap, on ne modifie pas le fichier jQuery.  
